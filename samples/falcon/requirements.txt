@@ -1,0 +1,7 @@
+backports-abc==0.4
+certifi==2016.9.26
+falcon==1.0.0
+python-mimeparse==1.5.5
+singledispatch==3.4.0.3
+six==1.10.0
+tornado==4.4.2
