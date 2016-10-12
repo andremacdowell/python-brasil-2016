@@ -197,14 +197,20 @@ def test_a(self, mock_b):
 ---
 
 # acabou
-#### (discussão)
+#### (discussão/dúvidas)
 
 ---
 
 ### Bibliografia
 
 - Fonte da imagem de capa: <a href="https://www.christart.com/">christart</a>
-- Fala maneira sobre testes: [Mike Lin](https://blog.fugue.co/2016-02-11-python-mocking-101.html)
+- Fala maneira sobre testes: [Mike Lin](https://blog.fugue.co/2016-02-11-python-mocking-101.html) (ótimo artigo)
+</br>
+- Outras fontes legais sobre Testes e Mocking:
+    - [Guia](http://docs.python-guide.org/en/latest/writing/tests/) de escrita de testes
+	- [Artigo](https://www.toptal.com/python/an-introduction-to-mocking-in-python) do Naftuli Tzvi Kay
+	- [Artigo](http://alexmarandon.com/articles/python_mock_gotchas/) do Alex Marandon
+	- [Artigo](http://www.drdobbs.com/testing/using-mocks-in-python/240168251) do José R.C. Cruz
 
 ---
 
