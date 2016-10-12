@@ -17,5 +17,5 @@ Coloquei aqui samples de testes para usos dos seguintes frameworks:
 - [Flask](https://github.com/pallets/flask)
 - [Falcon](	https://github.com/falconry/falcon)
 - [pymssql](https://github.com/pymssql/pymssql)
-- [pika(RabbitMQ)](https://github.com/pika/pika)
+- [pika (RabbitMQ)](https://github.com/pika/pika)
 - [Redis](https://github.com/andymccurdy/redis-py)
