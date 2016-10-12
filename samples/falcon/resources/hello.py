@@ -17,13 +17,13 @@ class Hello:
 
         if not body:
             raise falcon.HTTPBadRequest("Empty POST body",
-                                        "A valid JSON body is required.")
+                                        "A JSON body is required.")
 
         try:
             json_data = json.loads(body)
         except ValueError:
-            raise falcon.HTTPBadRequest("Invalid POST body",
-                                        "A valid JSON body is required.")
+            raise falcon.HTTPUnprocessableEntity(
+                "Invalid POST body", "A valid JSON body is required.")
 
         data = {
             "success": True,
