@@ -9,19 +9,6 @@ import resources.hello as hello
 FAKE_ROUTE = "/test_hello"
 
 
-def mock_request_class():
-    stream = type('stream', (object, ), {
-        'read': lambda x: False,
-    })
-
-    request = type('request', (object, ), {
-        'stream': stream(),
-        'get_header': lambda x, y: True
-    })
-
-    return request
-
-
 class TestFalconHello(testing.TestCase):
 
     def setUp(self):
