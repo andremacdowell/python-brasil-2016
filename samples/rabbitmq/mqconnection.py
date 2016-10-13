@@ -3,9 +3,13 @@ import pika
 from custom_exceptions import (NoConnectionToMQ, InvalidCredentialsError,
                                UnknownMQError, InsufficientPermissionsError,
                                RouteNotFoundError)
+from singleton import Singleton
 
 
 class MQConnection(object):
+
+    __metaclass__ = Singleton
+
     def __init__(self, appkey, hostname, port=None, username=None,
                  password=None):
 
