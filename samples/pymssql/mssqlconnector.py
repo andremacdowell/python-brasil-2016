@@ -45,6 +45,7 @@ class MSSQLConnector(object):
         except pymssql.InterfaceError, e:
             print "EXCEPTION: ", e
             cursor = self._retry_execution(sql)
+            return cursor
         except Exception, e:
             print "EXCEPTION: ", e
             raise e
@@ -54,7 +55,7 @@ class MSSQLConnector(object):
         return self.get_connection()
 
     def _retry_execution(self, sql):
-        self._set_connection()
-        cursor = self.get_connection().cursor()
+        connection = self._set_connection()
+        cursor = connection.cursor()
         cursor.execute(sql)
         return cursor
