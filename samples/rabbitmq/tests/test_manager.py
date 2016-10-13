@@ -2,38 +2,18 @@
 import unittest
 from mock import Mock, patch
 from mqmanager import MQManager
-    
+from . import mock_config
+
 
 def mock_channel(connection):
     method = type('method', (object, ), {'delivery_tag': 'mock_delivery_tag'})
-    
+
     channel = type('channel', (object, ), {
         'basic_get': lambda self, queue: (method, "", ""),
         'basic_ack': lambda self, delivery_tag: None
     })
     return channel()
 
-
-def mock_session_parameters(self, session):
-    return {
-        'parameters': {
-            'appkey': '',
-            'hostname': 'localhost',
-            'port': 1
-        },
-        'sessions': [
-            {'parameters': {'default': '', 'error': ''}}
-        ]
-    }
-
-
-mock_config = {
-    "appkey": "TestConsumer",
-    "hostname": "localhost",
-    "port": 1234,
-    "username": "my_very_special_user",
-    "password": "most_special_pwd"
-}
 
 mock_routes = {
     "default": "default_queue",
