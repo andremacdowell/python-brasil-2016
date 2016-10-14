@@ -158,17 +158,9 @@ def test_a(self, mock_deal_w_stuff):
 
 ---
 
-<!-- footer: flask e falcon: criando e mockando end-points -->
-
----
-
 <!-- footer: -->
 # Conectores de banco de dados
 #### (pymssql amado)
-
----
-
-<!-- footer: Conectores de banco de dados -->
 
 ---
 
@@ -178,17 +170,9 @@ def test_a(self, mock_deal_w_stuff):
 
 ---
 
-<!-- footer: Mensageria -->
-
----
-
 <!-- footer: -->
 # Provedores de cache
 #### (redis salvando a minha vida)
-
----
-
-<!-- footer: Provedores de cache-->
 
 ---
 
