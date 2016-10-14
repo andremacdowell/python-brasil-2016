@@ -89,9 +89,9 @@ class TestSomething(unittest.TestCase):
 <!-- footer: o que "mockar" e o que não "mockar"? -->
 ### Mocks em Python
 - Mocks são objetos ou chamadas de função que "substituem" as verdadeiras
-- "Development is about making things, while mocking is about faking things.", Mike Lin - 2016
 </br>
-![55%](images/cheating-at-cards.png)
+- "Development is about making things, while mocking is about faking things.", Mike Lin - 2016
+
 ---
 
 ### Mocks :heart: Testes unitários
