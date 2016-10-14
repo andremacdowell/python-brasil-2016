@@ -23,3 +23,7 @@ class TestAuthentication(testing.TestCase):
         response = self.simulate_get(
             FAKE_ROUTE, headers={"token": INVALID})
         self.assertEqual(response.status, falcon.HTTP_401)
+
+    def test_invalid_get_missing_token(self):
+        response = self.simulate_get(FAKE_ROUTE)
+        self.assertEqual(response.status, falcon.HTTP_400)
