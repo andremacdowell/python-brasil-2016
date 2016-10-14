@@ -13,7 +13,7 @@ class MSSQLConnector(object):
         self.port = 33333
 
     def __str__(self):
-        return lambda x: "{} - {}".format(x.server, x.user)
+        return "{} - {}".format(self.server, self.user)
 
     def get_connection(self):
         try:

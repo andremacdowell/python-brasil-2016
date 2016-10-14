@@ -13,4 +13,4 @@ class Singleton(type):
 
     @classmethod
     def __dispatch(cls):
-        cls._instances = {}
+        cls._instances = {}  # pragma: no cover
