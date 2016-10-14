@@ -1,6 +1,5 @@
 # encoding: utf-8
 import redis
-import json
 import custom_exceptions
 from singleton import Singleton
 
@@ -18,12 +17,11 @@ class RedisConnector(object):
 
     def set(self, key, value):
         sr = self._get_strict_redis()
-        return sr.set(key, value)
+        sr.set(key, value)
 
-    def retrieve_whole_db(self, db):
+    def retrieve_whole_db(self):
         sr = self._get_strict_redis()
-        value = map(lambda x: {x: json.loads(sr.get(x))},
-                    sr.keys())
+        value = map(lambda x: {x: sr.get(x)}, sr.keys())
         return value
 
     def _get_strict_redis(self):
