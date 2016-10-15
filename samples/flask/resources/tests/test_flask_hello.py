@@ -25,11 +25,11 @@ class TestFlaskHello(unittest.TestCase):
         self.api.add_resource(Hello, FAKE_ROUTE)
         self.api.init_app(self.app)
 
+    # Esse teste não é de unidade!!
     def test_that_is_actually_not_an_unit_test(self):
         with self.app.test_client() as client:
             result = client.get(FAKE_ROUTE)
             json_result = json.loads(result.get_data())
-
             self.assertEquals(result.status_code, 200)
             self.assertTrue(json_result["success"])
 
