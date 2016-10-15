@@ -5,3 +5,12 @@ python-mimeparse==1.5.5
 singledispatch==3.4.0.3
 six==1.10.0
 tornado==4.4.2
+
+# Testing
+coverage==4.2
+funcsigs==1.0.2
+mock==2.0.0
+pbr==1.10.0
+py==1.4.31
+pytest==3.0.3
+pytest-cov==2.4.0
