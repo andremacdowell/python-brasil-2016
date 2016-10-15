@@ -40,7 +40,8 @@ Mock Away!
 
 ---
 
-##### :exclamation: Eu vim do meio acadêmico, então me interrompam se eu estiver sendo chato/prolixo/lerdo :exclamation:
+#### Podem acompanhar aqui!
+###### https://github.com/amdowell/python-brasil-2016
 
 ---
 
