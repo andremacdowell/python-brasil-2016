@@ -48,6 +48,14 @@ class TestMssqlConnector(unittest.TestCase):
         self.assertIsNotNone(cursor)
 
     @mock.patch("pymssql.connect")
+    def test_unknown_error_failed_execution(self, mock_connect):
+        execution_function = mock.MagicMock(return_value=MOCK_QUERY_RESULT)
+        execution_function.side_effect = [pymssql.ProgrammingError()]
+        mock_connect.return_value = mock_connection(execution_function)
+        self.assertRaises(Exception,
+                          lambda: self.test_connector.execute(""))
+
+    @mock.patch("pymssql.connect")
     def test_success_execution(self, mock_connect):
         mock_connect.return_value = mock_connection(
             lambda x, y: MOCK_QUERY_RESULT)

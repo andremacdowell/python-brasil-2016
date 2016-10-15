@@ -33,14 +33,15 @@ Mock Away!
 
 <!-- footer: Quem sou eu -->
 ### Quem sou eu?
-- Trabalho com Python a +- 1 ano (antes Java por ~4 anos)
+- Trabalho com Python a +- 1 ano na ![7%](images/stone.jpg) [Stone](http://www.stone.com.br/) (antes Java por ~4 anos)
 - [Dojo](https://github.com/amdowell/dojo_monty_python) bacaninha com temática Monty Python
 - Alguns projetos entregues usando *Falcon, Flask, Django, pymssql, pymongo, grequests, pika, redis, Celery* e outras coisas legais
 ###### (e outras nem tanto, olhando para você pywin32 :rage:)
 
 ---
 
-##### :exclamation: Eu vim do meio acadêmico, então me interrompam se eu estiver sendo chato/prolixo/lerdo :exclamation:
+#### Podem acompanhar aqui!
+###### https://github.com/amdowell/python-brasil-2016
 
 ---
 
@@ -132,11 +133,11 @@ def test_a(self):
 
 ```python
 # Mesmo teste de A, com mock
-@mock.patch("B.deal_with_stuff")
-def test_a(self, mock_b):
+@mock.patch("resources.B.deal_with_stuff")
+def test_a(self, mock_deal_w_stuff):
     a = A()
-    mock_b.return_value = expected_fake
-    self.assertEqual(a.function_a(mock.MagicMock()),
+    mock_deal_w_stuff.return_value = expected_fake
+    self.assertEqual(a.function_a(anything),
                      expected_fake)
 ```
 
@@ -149,15 +150,12 @@ def test_a(self, mock_b):
   ```python
   import unittest.mock # nativo
   ```
+
 ---
 
 <!-- footer: -->
 # "Mockando" chamadas à APIs
 #### (flask e falcon: criando e mockando end-points)
-
----
-
-<!-- footer: flask e falcon: criando e mockando end-points -->
 
 ---
 
@@ -167,27 +165,15 @@ def test_a(self, mock_b):
 
 ---
 
-<!-- footer: Conectores de banco de dados -->
-
----
-
 <!-- footer: -->
 # Mensageria
 #### (mock aqui mock ali)
 
 ---
 
-<!-- footer: Mensageria -->
-
----
-
 <!-- footer: -->
 # Provedores de cache
 #### (redis salvando a minha vida)
-
----
-
-<!-- footer: Provedores de cache-->
 
 ---
 

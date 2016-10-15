@@ -21,3 +21,9 @@ class TestMssqlConnector(unittest.TestCase):
     def test_connection_successful(self, mock_raw_connect):
         connection = self.test_connector.get_connection()
         self.assertIsNotNone(connection)
+
+    def test_string_connector(self):
+        self.assertEquals(
+            str(self.test_connector),
+            "{} - {}".format(self.test_connector.server,
+                             self.test_connector.user))
