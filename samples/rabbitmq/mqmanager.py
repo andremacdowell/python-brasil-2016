@@ -52,5 +52,6 @@ class MQManager(object):
             route=route, channel=self.publishing_channel, body=body)
 
     def stop(self):
-        self.connection.close()
-        self.connection = None
+        if self.connection:
+            self.connection.close()
+            self.connection = None

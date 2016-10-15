@@ -35,8 +35,9 @@ class MQConnection(object):
             raise UnknownMQError(exception=e)
 
     def close(self):
-        self.connection.close()
-        self.connection = None
+        if self.connection:
+            self.connection.close()
+            self.connection = None
 
     def create_channel(self):
         if self.connection is None or self.connection.is_closed:

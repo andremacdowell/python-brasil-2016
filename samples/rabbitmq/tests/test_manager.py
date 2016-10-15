@@ -51,3 +51,7 @@ class TestMQManager(unittest.TestCase):
         self.mq_manager.publish(message='test', route='test')
 
         self.assertTrue(mock_success_publish.called)
+
+    def test_close_connection(self):
+        self.mq_manager.stop()
+        self.assertIsNone(self.mq_manager.connection)
