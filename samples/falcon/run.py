@@ -22,5 +22,5 @@ def execute(routes):
     ioloop.IOLoop.instance().start()
 
 
-if __name__ == '__main__':
+if __name__ == '__main__':  # pragma: no cover
     execute(routes())
