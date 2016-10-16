@@ -3,26 +3,7 @@ import unittest
 import mock
 import pymssql
 from mssqlconnector import MSSQLConnector
-
-MOCK_QUERY_RESULT = "QUERY_RESULT"
-
-
-def mock_connection(execution_function):
-
-    cursor = type('cursor', (object, ), {
-        'execute': execution_function
-    })
-
-    def cursor_call(*args, **kwargs):
-        return cursor()
-
-    connection = type('connection', (object, ), {
-        'cursor': cursor_call,
-        'json': lambda x: {},
-        'close': lambda x: {},
-    })
-
-    return connection()
+from . import (mock_connection, MOCK_QUERY_RESULT)
 
 
 class TestMssqlConnector(unittest.TestCase):
@@ -57,7 +38,8 @@ class TestMssqlConnector(unittest.TestCase):
 
     @mock.patch("pymssql.connect")
     def test_success_execution(self, mock_connect):
+        fetch_function = mock.MagicMock(return_value=MOCK_QUERY_RESULT)
         mock_connect.return_value = mock_connection(
-            lambda x, y: MOCK_QUERY_RESULT)
+            fetch_function=fetch_function)
         cursor = self.test_connector.execute("")
-        self.assertIsNotNone(cursor)
+        self.assertEquals(cursor.fetchall(), MOCK_QUERY_RESULT)
