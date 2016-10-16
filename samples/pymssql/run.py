@@ -1,5 +1,6 @@
 # encoding: utf-8
 from mssqlconnector import MSSQLConnector
+from custom_exceptions import (SQLConnectionError, SQLExecutionError)
 
 QUERY = """
 SELECT * TOP 1 FROM DB.TABLE
@@ -13,18 +14,17 @@ def execute(sql_query):
     try:
         connection = connector.get_connection()
     except Exception, e:
-        print "FAILED TO GET CONNECTION: ", str(e)
-        return
+        raise SQLConnectionError(e)
+    print str(connection)
 
     # Try and make a query
     try:
-        rows = connection.execute(sql_query)
+        rows = connector.execute(sql_query)
     except Exception, e:
-        print "FAILED EXECUTE QUERY: ", str(e)
-        return
+        raise SQLExecutionError(e)
 
     return rows
 
 
-if __name__ == "__main__":
+if __name__ == "__main__":  # pragma: no cover
     print "Result is: ", execute(QUERY)
