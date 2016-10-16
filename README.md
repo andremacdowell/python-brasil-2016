@@ -19,3 +19,10 @@ Coloquei aqui samples de testes para usos dos seguintes frameworks:
 - [pymssql](https://github.com/pymssql/pymssql)
 - [pika (RabbitMQ)](https://github.com/pika/pika)
 - [Redis](https://github.com/andymccurdy/redis-py)
+
+### Executando os testes
+
+Para executar os testes e gerar os coverage reports, criei um shell script (*generate-covs.sh* na raiz do repositório) que abre o browser com os htmls gerados. Para executa-lo você precisa de:
+- virtualenv & virtualenvwrapper
+- Um virtual-env para cada sample no formato *python-brasil-2016-$SAMPLENAME* (com o *requirements* instalado)
+- Firefox! (para abrir o browser com os reports, pode remover caso não queiram!)

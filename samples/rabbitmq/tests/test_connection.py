@@ -134,3 +134,14 @@ class TestMQConnection(unittest.TestCase):
             UnknownMQError,
             lambda: self.mq_connection.publish_in(
                 route='test', channel=channel, body='test'))
+
+    def test_close_connection_before_open(self):
+        self.mq_connection.close()
+        self.assertIsNone(self.mq_connection.connection)
+
+    @patch('pika.BlockingConnection')
+    def test_close_connection(self, mock_pika_conn):
+        self.mq_connection.open()
+        self.assertIsNotNone(self.mq_connection.connection)
+        self.mq_connection.close()
+        self.assertIsNone(self.mq_connection.connection)
